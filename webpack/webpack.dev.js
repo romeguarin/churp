@@ -4,6 +4,7 @@ const commonConfig = require('./webpack.common');
 const assetsPath = commonConfig.output.path;
 const publicPath = commonConfig.output.publicPath;
 const entryPath = commonConfig.entry;
+const resolve = commonConfig.resolve;
 
 const loaders = commonConfig.module.loaders;
 
@@ -23,7 +24,15 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin()
   ],
 
+  resolve: resolve,
+
   module: {
+    rules: [{
+      enforce: 'pre',
+      test: /\.js?$|\.jsx?$/,
+      loader: ['babel-loader', 'eslint-loader'],
+      exclude: /(node_modules)/
+    }],
     loaders: loaders
   }
 }

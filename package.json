@@ -7,6 +7,13 @@
     "type": "git",
     "url": "git+https://github.com/romeguarin/churp.git"
   },
+  "scripts": {
+    "lint": "eslint src server",
+    "webpack": "./node_modules/.bin/webpack",
+    "production": "webpack -p",
+    "start": "webpack && copy src\\css\\app.css dist\\css",
+    "http-server": "http-server ./dist"
+  },
   "author": "JJJ",
   "license": "MIT",
   "bugs": {
@@ -30,14 +37,14 @@
   },
   "devDependencies": {
     "babel-preset-react-hmre": "^1.1.1",
+    "eslint": "^3.17.1",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-loader": "^1.6.3",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.0",
     "nodemon": "^1.11.0",
     "webpack-dev-middleware": "^1.10.1",
     "webpack-hot-middleware": "^2.17.1"
-  },
-  "scripts": {
-    "webpack": "./node_modules/.bin/webpack",
-    "production": "webpack -p",
-    "start": "webpack && copy src\\css\\app.css dist\\css",
-    "http-server": "http-server ./dist"
   }
 }

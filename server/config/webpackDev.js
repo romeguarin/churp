@@ -6,7 +6,7 @@ module.exports = (app) => {
     return;
   }
 
-  const webpack = require('webpack')
+  const webpack = require('webpack');
   const config = require('../../webpack/webpack.dev.js');
   const webpackDevMiddleware = require('webpack-dev-middleware');
   const webpackHotMiddleware = require('webpack-hot-middleware');
@@ -14,7 +14,7 @@ module.exports = (app) => {
   const compiler = webpack(config);
 
   app.use(webpackDevMiddleware(compiler, {
-    publicPath: config.output.publicPath
+    publicPath: config.output.publicPath,
   }));
   app.use(webpackHotMiddleware(compiler));
 

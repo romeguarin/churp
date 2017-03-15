@@ -1,14 +1,14 @@
 const path = require('path');
 
 module.exports = {
-  entry: ['./src/index.js'],
+  entry: ['./src/index.jsx'],
   
   module: {
     loaders: [
       {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: "babel-loader"
+        test: /\.js?$|\.jsx?$/,
+        loader: 'babel-loader',
+        include: path.join(__dirname, '..', 'src')
       }
     ]
   },
@@ -19,7 +19,8 @@ module.exports = {
   },
 
   resolve: {
-    modules: ['node_modules', path.join(__dirname, '..', 'src')]
+    modules: [path.join(__dirname, '..', 'src'), 'node_modules'],
+    extensions: ['.js', '.jsx']
   }
   // plugins: [HtmlWebpackPluginConfig]
 };
