@@ -7,15 +7,15 @@ nodemon
 
 On your browser, run http://localhost:3000
 
-# Technologies used
-React
-Redux
-Express
-Webpack
-Eslint - extends AirBnb standards
-Nodemon
-Babel
+# Features used:
+- React
+- Redux
+- Express
+- Webpack
+- Eslint - extends AirBnb standards
+- Nodemon
+- Babel
 
-## Technologies to add
-Mocha
-Mongodb
+## To add
+- Mocha for unit testing
+- Mongodb and mongoose for DB integration
