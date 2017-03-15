@@ -1,0 +1,9 @@
+{
+  "watch": [
+    "webpack/",
+    "server/",
+    "index.js",
+    "package.json"
+  ],
+  "exec": "node index"
+}
